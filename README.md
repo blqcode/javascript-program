@@ -6,4 +6,4 @@
 
 As of 2024/10/29
 Project name :Task manage 
-This is a comprehensive course that took me through CRUD operations in node and error handling,through also mongoose CRUD, handling validation in CRUD
+This is a comprehensive course that took me through CRUD operations in node and error hand
