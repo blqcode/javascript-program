@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema({
         require:true,
         maxlength:[100,'no longer than 100 allowed']
     },
-    completes:{
+    completed:{
         type:Boolean,
         default:false
         
