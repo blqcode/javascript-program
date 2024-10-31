@@ -1,15 +1,16 @@
+const { name } = require('ejs')
 const mongoose = require('mongoose')
 
-const taskSchema = new mongoose.Schema({
+const taskSchema= new mongoose.Schema({
     name:{
         type:String,
-        require:true,
-        maxlength:[100,'no longer than 100 allowed']
+        require:[true,'should fill it'],
+        trim:true,
+        maxlength:[50,'name can not be moore than 50 chars']
     },
     completed:{
         type:Boolean,
         default:false
-        
     }
 })
 

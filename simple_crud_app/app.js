@@ -1,13 +1,14 @@
-const {connect} = require('mongoose')
 const express  = require('express')
-const connectDb = require('./db/coonectDB')
-const {router} = require('./routes/tasks')
-const tasks = require('./models/tasks')
+const connectDb = require('./db/conectDB')
+const {connect} = require('mongoose')
+const tasks = require('./routes/tasks')
+require('dotenv').config()
 const app= express()
-require('dotenv').config
+
 
 //middlewares
 app.use(express.json())
+
 //routes
 app.use('/api/v1/tasks',tasks)
 
@@ -16,7 +17,7 @@ app.use('/api/v1/tasks',tasks)
 const start = async()=>{
    try{ 
     
-    await connectDb('mongodb+srv://princeally556:0000@tasks.zsku5.mongodb.net/?retryWrites=true&w=majority&appName=tasks')
+    await connectDb(process.env.MONGO_URI)
     app.listen(3000,()=>{
     console.log(`listening on port:${port}`)
     })
@@ -25,7 +26,7 @@ const start = async()=>{
 }
 
 }
-//process.env.MONGO_URI
+//
 
 start()
 
