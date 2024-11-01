@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const connectDB = require('./db/connectdb')
-const productRouter = require('./routes/products')
+const router = require('./routes/products')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorMiddleware = require('./middleware/error-handler')
 const app = express()
@@ -12,7 +12,9 @@ app.use(express.json())
 
 
 //routes
-app.use('api/v1/product',productRouter)
+app.use('api/v1/',router)
+
+
 app.get('/',(req,res)=>{
     res.send(`</h1>Store API</h1><a href"api/v1/product">product route</a>`)
 })
